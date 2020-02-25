@@ -66,10 +66,10 @@ var Barchart = function(options){
   //drawing series name
 this.ctx.save();
 this.ctx.textBaseline="bottom";
-this.ctx.textAlign="center";
+this.ctx.textAlign="left";
 this.ctx.fillStyle = "#000000";
-this.ctx.font = "bold 14px Arial";
-this.ctx.fillText(this.options.seriesName, this.canvas.width/2,this.canvas.height);
+this.ctx.font = "bold 10px Arial";
+this.ctx.fillText(this.options.seriesName, this.canvas.width/8,this.canvas.height);
 this.ctx.restore();
 
         //drawing the bars
@@ -97,13 +97,13 @@ this.ctx.restore();
 var myBarchart = new Barchart(
     {
         canvas:myCanvas,
-        seriesName:"Fruits",
+        seriesName:['Apple', ' Orange', ' Banana', '   Kiwi','     Blueberry', ' Grapes'],
         padding:20,
         gridScale:5,
         gridColor:"#eeeeee",
         data:myFruits,
-        colors:["#FF2D00","#FF8600", "#FFF700","#51FF00","#0051FF","#A100FF"],
-        labels:["Apple","Orange","Banana","Kiwi","Blueberry","Grapes"]
+        colors:["#FF2D00","#FF8600", "#FFF700","#51FF00","#0051FF","#A100FF"]
+        
     }
 );
 myBarchart.draw();
