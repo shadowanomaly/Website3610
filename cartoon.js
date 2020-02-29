@@ -9,6 +9,8 @@ var c = document.getElementById("myCanvas3");
 var ctx = c.getContext("2d");
 ctx.beginPath();
 ctx.arc(100,60,50,0,2*Math.PI);
+ctx.fillStyle = "green";
+ctx.fill();
 ctx.stroke();
 
 //box
@@ -126,8 +128,8 @@ var ctx = c.getContext("2d");
 
 // Create gradient
 var grd = ctx.createLinearGradient(0, 0, 200, 0);
-grd.addColorStop(0, "orange");
-grd.addColorStop(1, "white");
+grd.addColorStop(0, "black");
+grd.addColorStop(1, "black");
 // Fill with gradient
 ctx.fillStyle = grd;
 
@@ -146,7 +148,9 @@ ctx.fillText("Mountain", 20, 150);
 var c = document.getElementById("myCanvas5");
 var ctx = c.getContext("2d");
 ctx.font = "30px Arial";
-ctx.fillText("Sun", 60, 50);
+ctx.fillText("Sun", 140, 50);
+ctx.fillStyle = "yellow";
+ctx.fill();
 
 
 //Mountain right
@@ -168,67 +172,78 @@ var c = document.getElementById("myCanvas6");
 var ctx = c.getContext("2d");
 ctx.beginPath();
 ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+ctx.fillStyle = "white";
+ctx.fill();
 ctx.stroke();
 
 //label for moon
 var c = document.getElementById("myCanvas6");
 var ctx = c.getContext("2d");
 ctx.font = "30px Arial";
-ctx.fillText("Moon", 60, 50);
+ctx.fillText("Moon", 60, 130);
+
 
 //Cloud
 var c = document.getElementById("myCanvas7");
 var ctx = c.getContext("2d");
 ctx.beginPath();
 ctx.arc(95, 120, 20, 0, 2 * Math.PI);
+ctx.fillStyle = "white";
+ctx.fill();
 ctx.stroke();
 //Cloud
 var c = document.getElementById("myCanvas7");
 var ctx = c.getContext("2d");
 ctx.beginPath();
 ctx.arc(95, 150, 20, 0, 2 * Math.PI);
+ctx.fillStyle = "white";
+ctx.fill();
 ctx.stroke();
 //Cloud
 var c = document.getElementById("myCanvas7");
 var ctx = c.getContext("2d");
 ctx.beginPath();
 ctx.arc(120, 150, 20, 0, 2 * Math.PI);
+ctx.fillStyle = "white";
+ctx.fill();
 ctx.stroke();
 
 //label for cloud
 var c = document.getElementById("myCanvas7");
 var ctx = c.getContext("2d");
 ctx.font = "30px Arial";
-ctx.fillText("Cloud", 60, 130);
+ctx.fillText("Cloud", 60, 100);
 
 //Water
 var c = document.getElementById("myCanvas8");
 var ctx = c.getContext("2d");
-
-
+//Color for label word
 // Create gradient
 var grd = ctx.createLinearGradient(0, 0, 200, 0);
 grd.addColorStop(0, "Blue");
 grd.addColorStop(1, "white");
 // Fill with gradient
 ctx.fillStyle = grd;
-
-
-
 ctx.beginPath();
 ctx.arc(150, 300, 40, 0, 2 * Math.PI);
+ctx.fillStyle = "blue";
+ctx.fill();
 ctx.stroke();
 //Water
 var c = document.getElementById("myCanvas8");
 var ctx = c.getContext("2d");
 ctx.beginPath();
 ctx.arc(95, 300, 40, 0, 2 * Math.PI);
+ctx.fillStyle = "blue";
+ctx.fill();
 ctx.stroke();
 //Water
 var c = document.getElementById("myCanvas8");
 var ctx = c.getContext("2d");
 ctx.beginPath();
 ctx.arc(50, 300, 40, 0, 2 * Math.PI);
+ctx.fillStyle = "blue";
+ctx.fill();
 ctx.stroke();
 
 //label for Water
