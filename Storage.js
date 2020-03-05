@@ -1,5 +1,5 @@
 
-// Check browser support
+/* Check browser support
 if (typeof(Storage) !== "undefined") {
   // Store
   localStorage.setItem("textarea1"," ");
@@ -8,8 +8,17 @@ if (typeof(Storage) !== "undefined") {
 } else {
   document.getElementById("textarea2").innerHTML = "Sorry, your browser does not support Web Storage...";
 }
+*/
 
+function save(){
+var text_to_save=document.getElementById('textarea1').value;
+localStorage.setItem("text", text_to_save); // save the item
+}
 
+function retrieve(){
+var text=localStorage.getItem("text"); // retrieve
+document.getElementById('textarea2').innerHTML = text; // display
+}
 
 function myFunction() {
   var x = document.getElementById("textarea1").value;
