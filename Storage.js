@@ -1,7 +1,7 @@
 // Check browser support
 if (typeof(Storage) !== "undefined") {
   // Store
-  localStorage.setItem("textarea1");
+  localStorage.setItem("textarea1"," ");
   // Retrieve
   document.getElementById("textarea2").innerHTML = localStorage.getItem("textarea1");
 } else {
