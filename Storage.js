@@ -25,6 +25,11 @@ function myFunction() {
 }
 //For title
 function myFunction2() {
-  var x = document.getElementById("title").value;
-  document.getElementById("textarea3").innerHTML = "Title: " + x;
+  var y = document.getElementById("title").value;
+  document.getElementById("textarea3").innerHTML = "Title: " + y;
+}
+
+//Clear function
+function myClear(){
+  localStorage.clear();
 }
