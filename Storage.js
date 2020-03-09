@@ -28,8 +28,13 @@ function myFunction2() {
   var y = document.getElementById("title").value;
   document.getElementById("textarea3").innerHTML = "Title: " + y;
 }
-
+//=============================================================================================================
+//Buttons
 //Clear function
 function myClear(){
   localStorage.clear();
+}
+//Undo function
+function myUndo(){
+  localStorage.removeItem('textarea2');
 }
