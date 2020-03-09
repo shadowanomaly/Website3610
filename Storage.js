@@ -1,5 +1,5 @@
 function save(){
-var text_to_save=document.getElementById('textarea1').value;
+var text_to_save=document.getElementById("textarea1"," ").value;
 localStorage.setItem("text", text_to_save); // save the item
 }
 
