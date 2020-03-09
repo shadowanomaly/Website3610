@@ -36,5 +36,5 @@ function myClear(){
 }
 //Undo function
 function myUndo(){
-  localStorage.removeItem('textarea2');
+  localStorage.removeItem('text');
 }
