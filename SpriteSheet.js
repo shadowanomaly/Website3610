@@ -45,7 +45,7 @@ function step() {
     currentDirection++; // Next row/direction in the sprite sheet
   }
   // Reset to the "down" direction once we've run through them all
-  if (currentDirection >= 3) {
+  if (currentDirection >= 1) {
     currentDirection = 0;
   }
   window.requestAnimationFrame(step);
