@@ -40,13 +40,10 @@ function step() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawFrame(cycleLoop[currentLoopIndex], currentDirection, 0, 0);
   currentLoopIndex++;
-  if (currentLoopIndex >= cycleLoop.length) {
-    currentLoopIndex = 0;
-    currentDirection++; // Next row/direction in the sprite sheet
+  if(cycleLoop[currentLoopIndex] == 10){
+  drawFrame(1, 0, 500, 0);
+  drawFrame(0, 0, 700, 0);
   }
-  // Reset to the "down" direction once we've run through them all
-  if (currentDirection >= 1) {
-    currentDirection = 0;
-  }
+  currentLoopIndex++;
   window.requestAnimationFrame(step);
 }
