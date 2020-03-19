@@ -19,7 +19,7 @@ let currentLoopIndex = 0;
 let frameCount = 10;
 
 function step() {
-  document.getElementById("demo");
+  document.getElementById("image");
   frameCount++;
   if (frameCount < 50) {
     window.requestAnimationFrame(step);
