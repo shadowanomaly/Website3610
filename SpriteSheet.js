@@ -18,7 +18,7 @@ function drawFrame(frameX, frameY, canvasX, canvasY) {
 function init() {
   window.requestAnimationFrame(step);
 }
-const cycleLoop = [0,1,2,3,4,5,6,7,8,9,0,9];
+const cycleLoop = [0,1,2,3,4,5,6,7,8,0,9];
 let currentLoopIndex = 0;
 let frameCount = 10;
 let currentDirection = 0;
