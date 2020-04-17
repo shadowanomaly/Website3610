@@ -43,6 +43,7 @@ var player;
 function create ()
 {
     this.physics.add.collider(player, platforms);
+    
     this.add.image(400, 300, 'sky');
     platforms = this.physics.add.staticGroup();
 
@@ -78,9 +79,10 @@ this.anims.create({
     repeat: -1
 });
 }
-cursors = this.input.keyboard.createCursorKeys();
+
 function update ()
 {
+    cursors = this.input.keyboard.createCursorKeys();
     if (cursors.left.isDown)
 {
     player.setVelocityX(-160);
