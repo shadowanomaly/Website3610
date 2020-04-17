@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 60px;
+  background-image:url("NightSky.jpg");
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  text-align: center;
+  background: white;
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #d1d1e0;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #d1d1e0;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Welcome to my Website for 3610</h1>
+  <p>Name: Elsie Urena</p><br>
+  <p>Email: renegadesa000@gmail.com</p>
+</div>
+
+
+<div class="topnav">
+     <a href="index.html">Home</a>
+  <a href="Assignments.html">Assignments</a>
+ <a href="Lab.html">Lab</a>
+  <a href="GameProject.html">Game Project</a>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>Game Part1</h2>
+      <h5>April 17, 2020</h5>
+      <div class="fakeimg" style="height:200px;">
+      <p><strong>Below is a link to Part1:</strong><br><br>
+         <a href="Part1.html">Part1</a>
+ </p>
+      </div>
+    </div>
+    
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>Some site images</h2>
+      <img src="NightSky.jpg" alt="Game image" width="200" height="200">
+      <p>Info about some sites</p>
+    </div>
+    <div class="card">
+      <h3>Popular levels</h3>
+      <img src="NightSky.jpg" alt="image" width="200" height="100">
+      <img src="NightSky.jpg" alt="image" width="200" height="100">
+      <img src="NightSky.jpg" alt="image" width="200" height="100">
+    </div>
+    <div class="card">
+      <h3>Blank</h3>
+      <p>Some text..</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <h2>Below are links to some sites used as reference</h2>
+
+</div>
+
+</body>
+</html>
