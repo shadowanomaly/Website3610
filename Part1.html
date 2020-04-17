@@ -42,6 +42,7 @@ var platforms;
 var player;
 function create ()
 {
+    this.physics.add.collider(player, platforms);
     this.add.image(400, 300, 'sky');
     platforms = this.physics.add.staticGroup();
 
@@ -76,7 +77,6 @@ this.anims.create({
     frameRate: 10,
     repeat: -1
 });
-    this.physics.add.collider(player, platforms);
 }
 
 function update ()
