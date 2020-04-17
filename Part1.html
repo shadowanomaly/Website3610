@@ -53,7 +53,8 @@ function create ()
     platforms.create(100, 250, 'ground');
     platforms.create(750, 220, 'ground');
     
-player = this.physics.add.sprite(450, 500, 'dude');
+    player.body.setGravityY(300)
+player = this.physics.add.sprite(450, 455, 'dude');
 
 player.setBounce(0.2);
 player.setCollideWorldBounds(true);
