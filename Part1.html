@@ -40,8 +40,10 @@ function preload ()
 }
 var platforms;
 var player;
+var cursors;
 function create ()
 {
+    cursors = this.input.keyboard.createCursorKeys();
     this.physics.add.collider(player, platforms);
     
     this.add.image(400, 300, 'sky');
@@ -82,7 +84,6 @@ this.anims.create({
 
 function update ()
 {
-    cursors = this.input.keyboard.createCursorKeys();
     if (cursors.left.isDown)
 {
     player.setVelocityX(-160);
