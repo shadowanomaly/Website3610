@@ -43,7 +43,6 @@ var player;
 var cursors;
 function create ()
 {
-    cursors = this.input.keyboard.createCursorKeys();
     this.physics.add.collider(player, platforms);
     
     this.add.image(400, 300, 'sky');
@@ -80,6 +79,7 @@ this.anims.create({
     frameRate: 10,
     repeat: -1
 });
+    cursors = this.input.keyboard.createCursorKeys();
 }
 
 function update ()
