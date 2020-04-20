@@ -12,7 +12,6 @@ var config = {
     width: 1000,
     height: 1000,
     _parent: 'phaser-example',
-    backgroundColor: '#efefef',
     scene: {
         preload: preload,
         create: create
@@ -23,32 +22,31 @@ var game = new Phaser.Game(config);
 
 function preload ()
 {
-    this.load.image('face', 'face.jpg');
-    this.load.image('eyes', 'eyes.jpg');
-    this.load.image('nose', 'nose.jpg');
-    this.load.image('mouth', 'mouth.jpg');
-    this.load.image('hair', 'hair.jpg');
+    this.load.image('background', 'background.jpg');
+    this.load.image('tree', 'tree.jpg');
+    this.load.image('fish', 'fish.jpg');
+    this.load.image('crab', 'crab.jpg');
+    this.load.image('people', 'people.jpg');
 }
 
 function create ()
 {
-    var face = this.add.sprite(100, 100, 'face');
-    var eyes = this.add.sprite(200, 200, 'eyes');
-    var nose = this.add.sprite(300, 300, 'nose');
-    var mouth = this.add.sprite(400, 400, 'mouth');
-    var hair = this.add.sprite(500, 500, 'hair');
+    this.add.image(1000, 1000, 'background');
+    
+    var tree = this.add.sprite(100, 100, 'tree');
+    var fish = this.add.sprite(200, 200, 'fish');
+    var crab = this.add.sprite(300, 300, 'crab');
+    var people = this.add.sprite(400, 400, 'people');
 
-    face.setInteractive();
-    eyes.setInteractive();
-    nose.setInteractive();
-    mouth.setInteractive();
-    hair.setInteractive();
+    tree.setInteractive();
+    fish.setInteractive();
+    crab.setInteractive();
+    people.setInteractive();
 
-    this.input.setDraggable(face);
-    this.input.setDraggable(eyes);
-    this.input.setDraggable(nose);
-    this.input.setDraggable(mouth);
-    this.input.setDraggable(hair);
+    this.input.setDraggable(tree);
+    this.input.setDraggable(fish);
+    this.input.setDraggable(crab);
+    this.input.setDraggable(people);
 
     this.input.on('drag', function (pointer, gameObject, dragX, dragY) {
 
