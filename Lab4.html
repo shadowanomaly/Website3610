@@ -24,15 +24,31 @@ var game = new Phaser.Game(config);
 function preload ()
 {
     this.load.image('face', 'face.jpg');
+    this.load.image('face', 'eyes.jpg');
+    this.load.image('face', 'nose.jpg');
+    this.load.image('face', 'mouth.jpg');
+    this.load.image('face', 'hair.jpg');
 }
 
 function create ()
 {
     var face = this.add.sprite(100, 100, 'face');
+    var eyes = this.add.sprite(200, 200, 'eyes');
+    var nose = this.add.sprite(300, 300, 'nose');
+    var mouth = this.add.sprite(400, 400, 'mouth');
+    var hair = this.add.sprite(500, 500, 'hair');
 
     face.setInteractive();
+    eyes.setInteractive();
+    nose.setInteractive();
+    mouth.setInteractive();
+    hair.setInteractive();
 
     this.input.setDraggable(face);
+    this.input.setDraggable(eyes);
+    this.input.setDraggable(nose);
+    this.input.setDraggable(mouth);
+    this.input.setDraggable(hair);
 
     this.input.on('drag', function (pointer, gameObject, dragX, dragY) {
 
