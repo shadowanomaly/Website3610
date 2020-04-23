@@ -59,6 +59,46 @@ body {
   margin-right: auto;
   width: 50%;
 }
+             
+/* Carousel */
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
+}
+  
+/* Make the image fully responsive */
+.carousel-inner img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+}
+
+.carousel-item h3{
+    color: #FF0000; 
+}
+
+.carousel-item p{
+    color: #FF0000; 
+}
+.iframe{
+    width: 50%;
+    height: auto;
+}
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}             
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
