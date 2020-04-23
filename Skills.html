@@ -78,11 +78,11 @@ body {
 }
 
 .carousel-item h3{
-    color: #FF0000; 
+    color: #00008B; 
 }
 
 .carousel-item p{
-    color: #FF0000; 
+    color: #00008B; 
 }
 .iframe{
     width: 50%;
@@ -98,6 +98,29 @@ body {
 @keyframes fadeEffect {
   from {opacity: 0;}
   to {opacity: 1;}
+}    
+.carousel-control-prev,
+.carousel-control-next {
+  height: 100px;
+  width: 100px;
+  outline: black;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-image: none;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: red;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: red;
 }             
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
