@@ -53,6 +53,12 @@ body {
   display: table;
   clear: both;
 }
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
@@ -105,40 +111,48 @@ body {
 </nav>
   
 <!--Carousel-->
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>                                                              
+  </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="dekuSkill1.png" alt="First slide">
+      <img class="center" src="dekuSkill1.png" alt="First slide">
       <div class="carousel-caption d-none d-md-block">
       <h5>Slide 1</h5>
       <p>Slide 1 with some words</p>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="dekuSkill2.jpg" alt="Second slide">
+      <img class="center" src="dekuSkill2.jpg" alt="Second slide">
       <div class="carousel-caption d-none d-md-block">
       <h5>Slide 2</h5>
       <p>Slide 2 with some words</p>                                                      
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="dekuSkill3.jpg" alt="Third slide">
+      <img class="center" src="dekuSkill3.jpg" alt="Third slide">
       <div class="carousel-caption d-none d-md-block">
       <h5>Slide 3</h5>
       <p>SLide 3 with some words</p>                                                     
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="dekuSkill4.png" alt="Fourth slide">
+      <img class="center" src="dekuSkill4.png" alt="Fourth slide">
       <div class="carousel-caption d-none d-md-block">
       <h5>Slide 4</h5>
       <p>SLide 4 with some words</p>                                                     
     </div>   
     <div class="carousel-item">
-      <img class="d-block w-100" src="dekuSkill5.jpg" alt="Fifth slide">
+      <img class="center" src="dekuSkill5.jpg" alt="Fifth slide">
       <div class="carousel-caption d-none d-md-block">
       <h5>Slide 5</h5>
       <p>SLide 5 with some words</p>                                                     
     </div> 
     <div class="carousel-item">
-      <img class="d-block w-100" src="dekuSkill6.gif" alt="Sixth slide">
+      <img class="center" src="dekuSkill6.gif" alt="Sixth slide">
       <div class="carousel-caption d-none d-md-block">
       <h5>Slide 6</h5>
       <p>SLide 6 with some words</p>                                                     
