@@ -38,3 +38,11 @@ function myClear(){
 function myUndo(){
   localStorage.removeItem('text');
 }
+
+// Storage.js
+browser.runtime.onMessage.addListener(message => {
+  console.log("Storage: onMessage", message);
+
+  // Add this line:
+  return Promise.resolve("Dummy response to keep the console quiet");
+});
