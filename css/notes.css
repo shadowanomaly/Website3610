@@ -32,5 +32,121 @@ margin:10px 10px 10px10px;
 p           adding:0px 0px 0px0px;
 }
 
+Here is a StateMaker I made. It is used for undo, redo, and save. It's quite simple. It works fine.
 
+The issue is that e.ctrlKey && e.key === 'z' and the like have strange behavior, when e.preventDefault() in Firefox, so I removed that part. The code below is admittedly imperfect, in that it writes over the last state if the words and states are the same length. But, if I didn't do that, it would have saved a state with every character, which is also doable. Another solution would be to save states based on time. I did not go that route for this example.
+
+//<![CDATA[
+/* external.js */
+/* StateMaker created by Jason Raymond Buckley */
+var doc, bod, I, StateMaker; // for use on other loads
+addEventListener('load', function(){
+doc = document; bod = doc.body;
+I = function(id){
+  return doc.getElementById(id);
+}
+StateMaker = function(initialState){
+  var o = initialState;
+  if(o){
+    this.initialState = o; this.states = [o];
+  }
+  else{
+    this.states = [];
+  }
+  this.savedStates = []; this.canUndo = this.canRedo = false; this.undoneStates = [];
+  this.addState = function(state){
+    this.states.push(state); this.undoneStates = []; this.canUndo = true; this.canRedo = false;
+    return this;
+  }
+  this.undo = function(){
+    var sl = this.states.length;
+    if(this.initialState){
+      if(sl > 1){
+        this.undoneStates.push(this.states.pop()); this.canRedo = true;
+        if(this.states.length < 2){
+          this.canUndo = false;
+        }
+      }
+      else{
+        this.canUndo = false;
+      }
+    }
+    else if(sl > 0){
+      this.undoneStates.push(this.states.pop()); this.canRedo = true;
+    }
+    else{
+      this.canUndo = false;
+    }
+    return this;
+  }
+  this.redo = function(){
+    if(this.undoneStates.length > 0){
+      this.states.push(this.undoneStates.pop()); this.canUndo = true;
+      if(this.undoneStates.length < 1){
+        this.canRedo = false;
+      }
+    }
+    else{
+      this.canRedo = false;
+    }
+    return this;
+  }
+  this.save = function(){
+    this.savedStates = this.states.slice();
+    return this;
+  }
+  this.isSavedState = function(){ // test to see if current state in use is a saved state
+    if(JSON.stringify(this.states) !== JSON.stringify(this.savedStates)){
+  return false;
+}
+return true;
+  }
+}
+var text = I('text'), val, wordCount = 0, words = 0, stateMaker = new StateMaker, save = I('save');
+text.onkeyup = function(e){
+  save.className = undefined; val = this.value.trim(); wordCount = val.split(/\s+/).length;
+  if(wordCount === words && stateMaker.states.length){
+    stateMaker.states[stateMaker.states.length-1] = val;
+  }
+  else{
+    stateMaker.addState(val); words = wordCount;
+  }
+}
+I('undo').onclick = function(){
+  stateMaker.undo(); val = text.value = (stateMaker.states[stateMaker.states.length-1] || '').trim();
+  text.focus();
+  save.className = stateMaker.isSavedState() ? 'saved' : undefined;
+}
+I('redo').onclick = function(){
+  stateMaker.redo(); val = text.value = (stateMaker.states[stateMaker.states.length-1] || '').trim();
+  text.focus();
+  save.className = stateMaker.isSavedState() ? 'saved' : undefined;
+}
+save.onclick = function(){
+  stateMaker.save(); text.focus(); this.className = 'saved';
+}
+}); // end load
+//]]>
+/* external.css */
+*{
+  padding:0; margin:0; border:0; box-sizing:border-box;
+}
+html,body{
+  width:100%; height:100%; background:#aaa; color:#000;
+}
+input{
+  font:22px Tahoma, Geneva, sans-serif; padding:3px;
+}
+#text{
+  width:calc(100% - 20px); height:calc(100% - 70px); font:22px Tahoma, Geneva, sans-serif; padding:3px 5px; margin:10px;
+}
+#undoRedoSave{
+  text-align:right;
+}
+input[type=button]{
+  padding:0 7px; border-radius:5px; margin-right:10px; border:2px solid #ccc;
+}
+input[type=button].saved{
+  border:2px solid #700;
+}
 
