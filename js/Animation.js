@@ -1,5 +1,5 @@
 let img = new Image();
-img.src = 'spritesheet.png';
+img.src = 'images/spritesheet.png';
 img.onload = function() {
   
 };
