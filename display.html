@@ -1,5 +1,7 @@
 <html>
 <head>
+<meta charset='UTF-8'/>
+<meta name='viewport' content='width=device-width, height=device-height, initial-scale:1'/>
 <title>Form</title>
 <link rel="stylesheet" href="../css/notes.css">
 <script src="../js/notes.js"></script>
@@ -32,7 +34,9 @@ column="80"></textarea></td>
 <td><input type="reset" value="CLEAR"></td>
 </tr>
 <tr>
-<td><input type="undo" value="UNDO"></td>
+<div id='undoRedoSave'>
+<td><input id='undo' type='button' value='undo' /></td>
+</div>
 </tr>
 </table>
 </div>
