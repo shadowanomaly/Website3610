@@ -1,4 +1,13 @@
- var config = {
+ class GameScene extends Phaser.Scene {
+
+	constructor() {
+		super({key : 'gameScene'});
+	}
+
+	init() {
+		
+	};
+var config = {
     type: Phaser.AUTO,
     width: 800,
     height: 600,
@@ -125,3 +134,10 @@ function collectCoin (player, coin)
     score += 10;
     scoreText.setText('Score: ' + score);
 }
+end() {
+		
+	}
+
+}
+
+export default GameScene;
