@@ -29,11 +29,11 @@ var game = new Phaser.Game(config);
 
 function preload ()
 {
-    this.load.image('sky', 'images/sky.jpg');
-    this.load.image('ground', 'images/platform.jpg');
-    this.load.image('coin', 'images/coin.png');
-    this.load.image('enemy', 'images/enemy.png');
-    this.load.spritesheet('dude', 'images/dude.png',
+    game.load.image('sky', 'images/sky.jpg');
+    game.load.image('ground', 'images/platform.jpg');
+    game.load.image('coin', 'images/coin.png');
+    game.load.image('enemy', 'images/enemy.png');
+    game.load.spritesheet('dude', 'images/dude.png',
         { frameWidth: 32, frameHeight: 48 } );
 }
 var platforms;
@@ -49,7 +49,7 @@ function create ()
     platforms = game.add.physicsGroup();
    // this.physics.add.collider(player, platforms);
     //Creates background
-    this.add.image(400, 300, 'sky');
+    game.add.image(400, 300, 'sky');
     //Creates Ground
     platforms.create(400, 568, 'ground').setScale(2).refreshBody();
     platforms.create(150, 400, 'ground');
