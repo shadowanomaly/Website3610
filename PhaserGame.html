@@ -100,7 +100,8 @@ function create ()
 
     this.physics.add.overlap(player, coin, collectCoin, null, this);
 }
-
+function update ()
+{
 if (cursors.left.isDown)
     {
         player.setVelocityX(-160);
