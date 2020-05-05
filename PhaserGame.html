@@ -49,11 +49,11 @@ function create ()
     
     platforms = this.physics.add.staticGroup();
     
-    platforms.create(400, 568, 'platform').setScale(2).refreshBody();
-    platforms.create(150, 400, 'platform');
-    platforms.create(600, 400, 'platform');
-    platforms.create(100, 250, 'platform');
-    platforms.create(750, 220, 'platform');
+    platforms.create(400, 568, 'ground').setScale(2).refreshBody();
+    platforms.create(150, 400, 'ground');
+    platforms.create(600, 400, 'ground');
+    platforms.create(100, 250, 'ground');
+    platforms.create(750, 220, 'ground');
     
     player = this.physics.add.sprite(445, 470, 'dude');
 
