@@ -100,7 +100,7 @@ function create ()
     this.physics.add.collider(coin, platforms);
     this.physics.add.overlap(player, coin, collectCoin, null, this);
     //For enemies
-    enemies = this.physics.add.group({
+    this.enemies = this.physics.add.group({
         key: 'enemy',
         repeat: 5,
         setXY: { x: 5, y: 0, stepX: 50 }
