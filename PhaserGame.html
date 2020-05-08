@@ -30,7 +30,7 @@ var platforms;
 var cursors;
 var score = 0;
 var scoreText;
-//var enemy;
+var enemies;
 var game = new Phaser.Game(config);
 
 function preload ()
@@ -99,9 +99,10 @@ function create ()
     this.physics.add.collider(coin, platforms);
     this.physics.add.overlap(player, coin, collectCoin, null, this);
     
-    /*enemys = this.physics.add.group();
-    this.physics.add.collider(enemys, platforms);
-    this.physics.add.collider(player, enemys, hitEnemy, null, this);*/
+    enemies = this.physics.add.group();
+    //enemies = enableBody = ('true');
+    this.physics.add.collider(enemies, platforms);
+    this.physics.add.collider(player, enemies, hitEnemy, null, this);
 }
 function update ()
 {
@@ -129,7 +130,7 @@ if (cursors.left.isDown)
         player.setVelocityY(-330);
     }
 }
-/*function hitEnemy (player, enemy)
+function hitEnemy (player, enemy)
 {
     this.physics.pause();
 
@@ -138,7 +139,7 @@ if (cursors.left.isDown)
     player.anims.play('turn');
 
     gameOver = true;
-}*/
+}
 function collectCoin (player, coin)
 {
     coin.disableBody(true, true);
@@ -146,7 +147,7 @@ function collectCoin (player, coin)
     score += 10;
     scoreText.setText('Score: ' + score);
     
-   /*if (coin.countActive(true) === 0)
+   if (coin.countActive(true) === 0)
     {
         coin.children.iterate(function (child) {
 
@@ -161,7 +162,7 @@ function collectCoin (player, coin)
         enemy.setCollideWorldBounds(true);
         enemy.setVelocity(Phaser.Math.Between(-200, 200), 20);
 
-    }*/
+    }
 }
 
     </script>
