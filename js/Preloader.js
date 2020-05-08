@@ -31,6 +31,6 @@ Game.Preloader.prototype = {
           
           
           
-          }
+          };
           
     
