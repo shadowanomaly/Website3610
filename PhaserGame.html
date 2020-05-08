@@ -105,9 +105,9 @@ function create ()
         repeat: 5,
         setXY: { x: 6, y: 0, stepX: 50 }
     });
-    enemies.children.iterate(function (child) {
+    enemies.addchildren.iterate(function (child) {
 
-    child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
+    addchild.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
     });
     this.physics.add.collider(enemies, platforms);
     this.physics.add.collider(player, enemies, hitEnemy, null, this);*/
