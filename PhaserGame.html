@@ -99,6 +99,12 @@ function create ()
     this.physics.add.collider(coin, platforms);
 
     this.physics.add.overlap(player, coin, collectCoin, null, this);
+    
+    enemys = this.physics.add.group();
+
+    this.physics.add.collider(enemys, platforms);
+
+    this.physics.add.collider(player, enemys, hitEnemy, null, this);
 }
 function update ()
 {
@@ -133,8 +139,34 @@ function collectCoin (player, coin)
 
     score += 10;
     scoreText.setText('Score: ' + score);
-}
+    
+    if (coin.countActive(true) === 0)
+    {
+        coin.children.iterate(function (child) {
 
+            child.enableBody(true, child.x, 0, true, true);
+
+        });
+
+        var x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
+
+        var enemy = enemys.create(x, 16, 'bomb');
+        bomb.setBounce(1);
+        bomb.setCollideWorldBounds(true);
+        bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
+
+    }
+}
+function hitEnemy (player, enemy)
+{
+    this.physics.pause();
+
+    player.setTint(0xff0000);
+
+    player.anims.play('turn');
+
+    gameOver = true;
+}
     </script>
 
 </body>
