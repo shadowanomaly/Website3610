@@ -100,7 +100,7 @@ function create ()
     this.physics.add.overlap(player, coin, collectCoin, null, this);
     
     enemies = this.physics.add.group();
-    //enemies = enableBody = ('true');
+    enemies = enableBody = ('true');
     this.physics.add.collider(enemies, platforms);
     this.physics.add.collider(player, enemies, hitEnemy, null, this);
 }
