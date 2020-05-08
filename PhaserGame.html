@@ -82,7 +82,7 @@ function create ()
     //For keyboard
     cursors = this.input.keyboard.createCursorKeys();
     //For coins
-    this.coin = this.physics.add.group({
+    coin = this.physics.add.group({
         key: 'coin',
         repeat: 11,
         setXY: { x: 12, y: 0, stepX: 70 }
@@ -100,14 +100,14 @@ function create ()
     this.physics.add.collider(coin, platforms);
     this.physics.add.overlap(player, coin, collectCoin, null, this);
     //For enemies
-    this.enemies = this.physics.add.group({
+    enemies = this.physics.add.group({
         key: 'enemy',
         repeat: 5,
         setXY: { x: 5, y: 0, stepX: 50 }
     });
     enemies.children.iterate(function (child) {
 
-    child.setBounceY(Phaser.Math.FloatBetween(0.2, 0.6));
+    child.setBounceY(Phaser.Math.FloatBetween(0.6, 0.9));
 
     });
     this.physics.add.collider(enemies, platforms);
@@ -139,7 +139,7 @@ if (cursors.left.isDown)
         player.setVelocityY(-330);
     }
 }
-function hitEnemy (player, enemy)
+function hitEnemy (player, enemies)
 {
     this.physics.pause();
 
