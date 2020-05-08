@@ -82,7 +82,7 @@ function create ()
     //For keyboard
     cursors = this.input.keyboard.createCursorKeys();
     //For coins
-    coin = this.physics.add.group({
+    this.coin = this.physics.add.group({
         key: 'coin',
         repeat: 11,
         setXY: { x: 12, y: 0, stepX: 70 }
