@@ -1,20 +1,20 @@
 Game.Preloader = function (game){
 
-    this.preloaderBar = null;
+    this.preloadBar = null;
     
 };
 
 Game.Preloader.prototype = {
       preload:function(){
       
-          this.preloadBar = this.addsprite(this.world.centerX,
+          this.preloadBar = this.add.sprite(this.world.centerX,
                                           this.world.centerY,'preloaderBar');
                                           
-          this.preloadBar.anchor.setTo(0.5,0,0.5);
+          this.preloadBar.anchor.setTo(0.5,0.5);
           
           this.time.advancedTiming = true;
           
-          this.load.setPreloadSpirite(this.preloadBar);
+          this.load.setPreloadSprite(this.preloadBar);
           
           //LOAD ALL ASSETS
           
