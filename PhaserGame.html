@@ -156,7 +156,7 @@ function collectCoin (player, coin)
     score += 10;
     scoreText.setText('Score: ' + score);
     
-    if (coin.countActive(true) === 0)
+   /* if (coin.countActive(true) === 0)
     {
         coin.children.iterate(function (child) {
 
@@ -166,7 +166,7 @@ function collectCoin (player, coin)
 
         var x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
 
-        /*var enemy = enemies.create(x, 16, 'enemy');
+        var enemy = enemies.create(x, 16, 'enemy');
         enemy.setBounce(1);
         enemy.setCollideWorldBounds(true);
         enemy.setVelocity(Phaser.Math.Between(-200, 200), 20);*/
